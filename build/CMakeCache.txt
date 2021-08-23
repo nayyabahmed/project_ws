@@ -441,6 +441,12 @@ lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
 //Value Computed by CMake
+minimal_robot_description_BINARY_DIR:STATIC=/home/nayab/project_ws/build/minimal_robot_description
+
+//Value Computed by CMake
+minimal_robot_description_SOURCE_DIR:STATIC=/home/nayab/project_ws/src/minimal_robot_description
+
+//Value Computed by CMake
 mobot_urdf_BINARY_DIR:STATIC=/home/nayab/project_ws/build/mobot_urdf
 
 //Value Computed by CMake
@@ -627,7 +633,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
