@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/nayab/project_ws/devel/lib;/home/nayab/ros_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nayab/project_ws/devel/lib;/home/nayab/project_ws/devel/lib;/home/nayab/ros_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(sensor_transform_EXPORTED_TARGETS "")
+set(sensor_transform_EXPORTED_TARGETS "sensor_transform_generate_messages_cpp;sensor_transform_generate_messages_eus;sensor_transform_generate_messages_lisp;sensor_transform_generate_messages_nodejs;sensor_transform_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${sensor_transform_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   _list_append_deduplicate(sensor_transform_EXPORTED_TARGETS ${${sensor_transform_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "sensor_transform-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${sensor_transform_DIR}/${extra})

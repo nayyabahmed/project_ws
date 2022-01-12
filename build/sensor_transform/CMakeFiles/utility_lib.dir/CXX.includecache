@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nayab/project_ws/src/sensor_transform/src/laserscan/utility_lib.cpp
+utility_lib.h
+/home/nayab/project_ws/src/sensor_transform/src/laserscan/utility_lib.h
+
+/home/nayab/project_ws/src/sensor_transform/src/laserscan/utility_lib.h
+math.h
+-
+

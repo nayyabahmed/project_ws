@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   geometry_msgs
+  actionlib_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -69,10 +71,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -151,8 +153,26 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+
+
+add_library(utility_lib src/laserscan/utility_lib.cpp)
+#LaserScan
+add_library(laserscan_lib src/laserscan/LaserScanner.cpp)
+target_link_libraries(laserscan_lib ${catkin_LIBRARIES})
+add_dependencies(laserscan_lib ${catkin_EXPORTED_TARGETS})
+target_link_libraries(laserscan_lib utility_lib)
+
+
+add_executable(scan_subscriber src/scan_subscriber.cpp)
+target_link_libraries(scan_subscriber ${catkin_LIBRARIES})
+target_link_libraries(scan_subscriber laserscan_lib)
+
 add_executable(transform src/transform.cpp)
 target_link_libraries(transform ${catkin_LIBRARIES})
+
+add_executable(sim_drive src/sim_drive.cpp)
+target_link_libraries(sim_drive ${catkin_LIBRARIES})
+
 
 
 #############
